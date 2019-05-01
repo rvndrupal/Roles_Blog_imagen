@@ -6,6 +6,8 @@
     <li><a href="{{ route('users.index') }}"><i class="fa fa-users"></i> <span>Usuarios</span></a></li>
     @endcan
 
+    <li><a href="{{ route('blog') }}" target="_blanck"><i class="fa fa-users"></i> <span>Blog</span></a></li>
+
     @can('roles.index')
     <li><a href="{{ route('roles.index') }}"><i class="fa fa-lock"></i> <span>Roles</span></a></li>
     @endcan

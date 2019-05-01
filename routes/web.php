@@ -42,6 +42,9 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('blog', 'Web\PageController@blog')->name('blog');
+Route::get('blog/{slug}', 'Web\PageController@post')->name('post');
+
 
 //Se crean las rutas del sistema
 //MUY IMPORTANTE AGREGAR EL MIDDLAWERE AL ARCHIVO kERNEL.PHP
