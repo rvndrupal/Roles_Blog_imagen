@@ -43,7 +43,7 @@ class PageController extends Controller
 
     public function tag($slug)//filtrado por tag
     {
-        //consigue e post que tenga etiquetas con esta logica adicional
+        //consigue los post que tenga etiquetas tags con esta logica adicional
         $posts=Post::whereHas('tags', function($query) use($slug){
             $query->where('slug', $slug);
             //consigueme la etiqueta siempre y cuando contenga este slug
