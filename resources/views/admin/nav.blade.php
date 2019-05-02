@@ -24,7 +24,11 @@
         @can('tags.index')
         <li><a href="{{ route('tags.index') }}"><i class="fa fa-eye"></i>Tags</a></li>
         @endcan
-        <li><a href="#">Link in level 2</a></li>
+
+        @can('categories.index')
+        <li><a href="{{ route('categories.index') }}"><i class="fa fa-eye"></i>Categorias</a></li>
+        @endcan
+
         </ul>
     </li>
 </ul>
