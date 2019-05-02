@@ -18,7 +18,12 @@
             </span>
         </a>
         <ul class="treeview-menu">
+        @can('products.index')
         <li><a href="{{ route('products.index') }}"><i class="fa fa-eye"></i>Productos</a></li>
+        @endcan
+        @can('tags.index')
+        <li><a href="{{ route('tags.index') }}"><i class="fa fa-eye"></i>Tags</a></li>
+        @endcan
         <li><a href="#">Link in level 2</a></li>
         </ul>
     </li>

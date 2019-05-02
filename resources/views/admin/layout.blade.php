@@ -304,6 +304,22 @@ desired effect
 
             @endif
 
+            @if(count($errors))
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="alert alert-success">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
@@ -411,6 +427,8 @@ desired effect
 <script src="{{ asset('adminlte/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('adminlte/js/adminlte.min.js') }}"></script>
+
+@yield('scripts')
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
