@@ -191,5 +191,42 @@ class PermissionsTableSeeder extends Seeder
         ]);
         //Categorias
 
+         //Post
+         Permission::create([
+            'name' => 'Navegar Post',
+            'slug' => 'posts.index',
+            'description'  => 'Lista y navega todos los posts del sistema',
+
+        ]);
+
+        Permission::create([
+            'name' => 'Ver detalle de posts',
+            'slug' => 'posts.show',
+            'description'  => 'Ver en detalle cada post del sistema',
+
+        ]);
+
+        Permission::create([
+            'name' => 'Crea un nuevo post',
+            'slug' => 'posts.create',
+            'description'  => 'Crear un nuevo post del sistema',
+
+        ]);
+
+        Permission::create([
+            'name' => 'Edicion de posts',
+            'slug' => 'posts.edit',
+            'description'  => 'Editar cualquier dato de un post del sistema',
+
+        ]);
+
+        Permission::create([
+            'name' => 'Eliminar post',
+            'slug' => 'posts.destroy',
+            'description'  => 'Eliminar cualquier dato de un post del sistema',
+
+        ]);
+        //Post
+
     }
 }

@@ -29,6 +29,10 @@
         <li><a href="{{ route('categories.index') }}"><i class="fa fa-eye"></i>Categorias</a></li>
         @endcan
 
+        @can('posts.index')
+        <li><a href="{{ route('posts.index') }}"><i class="fa fa-eye"></i>Post</a></li>
+        @endcan
+
         </ul>
     </li>
 </ul>
