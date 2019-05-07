@@ -31,6 +31,7 @@ class CategoryController extends Controller
     {
         $categories = Category::orderBy('id', 'DESC')->paginate();
 
+
         return view('categories.index', compact('categories'));
     }
 
@@ -53,6 +54,8 @@ class CategoryController extends Controller
     public function store(CategoryStoreRequest $request)
     {
         $category = Category::create($request->all());
+
+
 
         return redirect()->route('categories.index', $category->id)->with('info', 'Categoría creada con éxito');
     }

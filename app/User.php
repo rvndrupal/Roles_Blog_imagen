@@ -7,6 +7,18 @@ use Caffeinated\Shinobi\Traits\ShinobiTrait; //muy importante para los permisos
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+/**
+ * App\User
+ *
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Caffeinated\Shinobi\Models\Permission[] $permissions
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Post[] $posts
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Caffeinated\Shinobi\Models\Role[] $roles
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User query()
+ * @mixin \Eloquent
+ */
 class User extends Authenticatable
 {
     use Notifiable, ShinobiTrait;

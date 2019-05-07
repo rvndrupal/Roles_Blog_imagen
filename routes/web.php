@@ -21,6 +21,8 @@ Route::get('admin', function () {
 })->middleware('auth')->name('admin.page');
 
 
+
+
 //Auth::routes();
 
 //rutas template.
@@ -144,6 +146,29 @@ Route::middleware(['auth'])->group(function(){
 
      Route::get('categories/{category}/edit', 'CategoryController@edit')->name('categories.edit')
      ->middleware('permission:categories.edit');
+
+
+      //rutas permisos
+      Route::post('permissions/store', 'PermissionsController@store')->name('permissions.store')
+      ->middleware('permission:permissions.create');
+
+      Route::get('permissions', 'PermissionsController@index')->name('permissions.index')
+      ->middleware('permission:permissions.index');
+
+      Route::get('permissions/create' , 'PermissionsController@create')->name('permissions.create')
+      ->middleware('permission:permissions.create');
+
+      Route::put('permissions/{permissions}', 'PermissionsController@update')->name('permissions.update')
+      ->middleware('permission:permissions.edit');
+
+      Route::get('permissions/{permissions}', 'PermissionsController@show')->name('permissions.show')
+      ->middleware('permission:permissions.show');
+
+      Route::delete('permissions/{permissions}', 'PermissionsController@destroy')->name('permissions.destroy')
+      ->middleware('permission:permissions.destroy');
+
+      Route::get('permissions/{permissions}/edit', 'PermissionsController@edit')->name('permissions.edit')
+      ->middleware('permission:permissions.edit');
 
 
      //rutas post
