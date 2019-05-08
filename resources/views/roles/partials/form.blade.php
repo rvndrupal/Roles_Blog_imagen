@@ -64,6 +64,7 @@
     $('.select_permissions').chosen({
         placeholder_text_multiple:'Seleccione una opción ',
         no_results_text: 'No se encontro el permiso',
+
     });
     </script>
 
