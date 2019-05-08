@@ -1,7 +1,8 @@
-@extends('layouts.app')
-
+<link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
+  <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" media="all" />
+  <link href="//fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
 @section('content')
-<div class="container">
+{{--  <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -69,5 +70,92 @@
             </div>
         </div>
     </div>
+</div>  --}}
+
+
+  {{-- Para el login --}}
+  <script>
+    addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    }
+</script>
+
+  {{-- Para el login --}}
+
+  @if(count($errors))
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="alert alert-success">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+
+<div class="w3layouts-main">
+	<div class="bg-layer">
+		<h1>Bienvenido</h1>
+		<div class="header-main">
+			<div class="main-icon">
+				<span class="fa fa-eercast"></span>
+			</div>
+			<div class="header-left-bottom">
+				{{--  <form action="#" method="post">  --}}
+                <form method="POST" action="{{ route('login') }}">
+                        @csrf
+
+					<div class="icon1">
+						<span class="fa fa-user"></span>
+						<input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                        @if ($errors->has('email'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+					<div class="icon1">
+						<span class="fa fa-lock"></span>
+                        <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                        @if ($errors->has('password'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
+                        @endif
+					</div>
+
+					<div class="bottom">
+						<button class="btn">Entrar</button>
+					</div>
+
+				</form>
+			</div>
+			{{--  <div class="social">
+				<ul>
+					<li>or login using : </li>
+					<li><a href="#" class="facebook"><span class="fa fa-facebook"></span></a></li>
+					<li><a href="#" class="twitter"><span class="fa fa-twitter"></span></a></li>
+					<li><a href="#" class="google"><span class="fa fa-google-plus"></span></a></li>
+				</ul>
+			</div>  --}}
+		</div>
+
+		<!-- copyright -->
+		<div class="copyright">
+			{{--  <p>© 2019 Slide Login Form . All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a></p>  --}}
+		</div>
+		<!-- //copyright -->
+	</div>
 </div>
-@endsection
+
+
