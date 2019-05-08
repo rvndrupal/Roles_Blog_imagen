@@ -28,7 +28,8 @@ class RoleController extends Controller
      */
     public function create()
     {
-        $permissions = Permission::get();  //se descargan todos los permisos
+
+        $permissions = Permission::orderBy('id', 'ASC')->pluck('name', 'id'); //se descargan todos los permisos
         return view('roles.create', compact('permissions'));
     }
 

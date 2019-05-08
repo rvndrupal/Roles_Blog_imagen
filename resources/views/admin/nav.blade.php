@@ -12,7 +12,9 @@
     <li><a href="{{ route('roles.index') }}"><i class="fa fa-lock"></i> <span>Roles</span></a></li>
     @endcan
 
+    @can('permissions.index')
     <li><a href="{{ route('permissions.index') }}"><i class="fa fa-lock"></i> <span>Permisos</span></a></li>
+    @endcan
 
     <li class="treeview">
         <a href="#"><i class="fa fa-bars"></i> <span>Admin</span>
