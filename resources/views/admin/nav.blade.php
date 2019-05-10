@@ -38,6 +38,8 @@
         <li><a href="{{ route('posts.index') }}"><i class="fa fa-eye"></i>Post</a></li>
         @endcan
 
+        <li><a href="{{ route('ponentes.index') }}"><i class="fa fa-eye"></i>Ponente</a></li>
+
         </ul>
     </li>
 </ul>

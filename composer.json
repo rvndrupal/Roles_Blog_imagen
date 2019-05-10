@@ -13,7 +13,9 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
-        "laravelcollective/html": "^5.7"
+        "laravelcollective/html": "^5.7",
+        "infyomlabs/laravel-generator": "5.7.x-dev",
+       "infyomlabs/adminlte-templates": "5.7.x-dev"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.6",

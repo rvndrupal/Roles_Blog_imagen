@@ -213,3 +213,6 @@ Route::middleware(['auth'])->group(function(){
     Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit')
     ->middleware('permission:users.edit');
 });
+
+
+Route::resource('ponentes', 'PonenteController');
