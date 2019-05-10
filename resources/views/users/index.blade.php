@@ -20,6 +20,9 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Usuarios
+                    <a href="{{ route('users.create') }}" class="pull-right btn btn-sm btn-primary">
+                        Crear
+                    </a>
 
                 </div>
 

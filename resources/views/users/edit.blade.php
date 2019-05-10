@@ -27,7 +27,7 @@
                 {!! Form::model($user, ['route'=> ['users.update', $user->id],
                  'method'=>'PUT']) !!}
 
-                @include('users.partials.form')
+                @include('users.partials.edit')
 
                 {!! Form::close() !!}
 

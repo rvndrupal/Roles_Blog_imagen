@@ -1,26 +1,36 @@
-@extends('layouts.app')
+@extends('admin.layout')
+
+@section('page-header')
+    <section class="content-header">
+            <h1>
+                    Lista de Usuarios
+                    <small>Todos los Usuarios </small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="{{ route('users.index') }}"><i class="fa fa-dashboard"></i> Lista</a></li>
+                    <li class="active">Usuarios</li>
+                    </ol>
+    </section>
+@endsection
 
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                   Nuevo Producto
+                    Crear nuevo Usuario
                 </div>
 
                 <div class="panel-body">
-                
-                {!! Form::open(['route'=> 'products.store']) !!}
+                    {!! Form::open(['route' => 'users.store']) !!}
 
-                @include('products.partials.form')
-                
-                {!! Form::close() !!}
-                
-                
+                        @include('users.partials.form')
+
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
     </div>
-</div>   
-@endsection 
+</div>
+@endsection

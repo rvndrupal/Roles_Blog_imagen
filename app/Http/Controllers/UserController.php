@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\User;
 use Caffeinated\Shinobi\Models\Role;
+use Illuminate\Support\Facades\Hash;
 
 
 class UserController extends Controller
@@ -17,9 +18,29 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(5);
+        $users = User::orderBy('id','DESC')->paginate(10);
 
         return view('users.index', compact('users'));
+    }
+
+
+    public function create()
+    {
+        $roles = Role::get(); //se descargan todos los roles
+        return view('users.create',compact('roles'));
+    }
+
+
+    public function store(Request $request)
+    {
+        $user = User::create($request->all());
+        $user->password= bcrypt( $request->input("password") );
+
+        $user->roles()->sync($request->get('roles'));
+
+        $user->save();
+
+        return redirect()->route('users.index')->with('info', 'Usuario creado con éxito');
     }
 
     /**
