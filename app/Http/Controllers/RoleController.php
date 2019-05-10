@@ -72,7 +72,8 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        $permissions = Permission::get();  //se descargan todos los permisos
+       // $permissions = Permission::get();  //se descargan todos los permisos
+       $permissions = Permission::orderBy('id', 'ASC')->pluck('name', 'id');
 
         return view('roles.edit', compact('role', 'permissions'));
     }
