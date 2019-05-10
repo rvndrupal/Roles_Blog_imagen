@@ -24,17 +24,12 @@ class PonenteController extends AppBaseController
         $this->ponenteRepository = $ponenteRepo;
 
         //Se ponene los roles
-        public function __construct(){
 
-            $this->middleware('permission:ponente.create')->only(['create', 'store']);
-            $this->middleware('permission:ponente.index')->only(['index']);
-            $this->middleware('permission:ponente.edit')->only(['edit', 'update']);
-            $this->middleware('permission:ponente.show')->only(['show']);
-            $this->middleware('permission:ponente.destroy')->only(['destroy']);
-
-        }
-
-
+        $this->middleware('permission:ponente.create')->only(['create', 'store']);
+        $this->middleware('permission:ponente.index')->only(['index']);
+        $this->middleware('permission:ponente.edit')->only(['edit', 'update']);
+        $this->middleware('permission:ponente.show')->only(['show']);
+        $this->middleware('permission:ponente.destroy')->only(['destroy']);
     }
 
     /**

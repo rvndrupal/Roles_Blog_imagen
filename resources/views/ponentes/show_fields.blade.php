@@ -19,7 +19,7 @@
 <!-- Foto Field -->
 <div class="form-group">
     {!! Form::label('foto', 'Foto:') !!}
-    <p>{!! $ponente->foto !!}</p>
+    <p><img src="{{ $ponente->foto }}" alt="{{ $ponente->nombre }}" style="width: 120px;"></p>
 </div>
 
 <!-- Created At Field -->
